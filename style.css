@@ -141,6 +141,35 @@ body {
     50% { transform: translateX(-50%) translateY(20px); }
 }
 
+/* arrum */
+.arrum-section {
+    background: #f5f5dc;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .arrum-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #6b4f3b;
+  }
+
+  .arabic {
+    font-size: 26px;
+    direction: rtl;
+    font-family: 'Amiri', serif;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+
+  .translation {
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.6;
+  }
+
 /* ========== General Section ========== */
 .section {
     padding: 80px 20px;

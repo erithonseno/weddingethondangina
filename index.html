@@ -1,34 +1,91 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan - Gina & Ethon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Sacramento:wght@400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Sacramento:wght@400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- efek sakura -->
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to bottom, #ffe6f0, #ffffff);
+        }
+
+        .sakura {
+            position: fixed;
+            top: -10px;
+            font-size: 20px;
+            color: #ff69b4;
+            animation: fall linear infinite;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) translateX(100px) rotate(360deg);
+                opacity: 0.5;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle fade-in-up">Dengan penuh kegembiraan kami mengundang Anda</p>
+            <p class="hero-subtitle fade-in-up">The Wedding Of</p>
             <h1 class="hero-title fade-in-up">Gina & Ethon</h1>
-            <p class="hero-text fade-in-up">Merayakan pernikahan kami</p>
+            <p class="hero-text fade-in-up">Minggu, 28 Juni 2026</p>
             <div class="hero-cta fade-in-up">
-                <a href="#couple" class="btn-primary">Lihat Undangan</a>
+                <a href="#surah-arrum-21" class="btn-primary">Lihat Undangan</a>
             </div>
         </div>
         <div class="scroll-indicator fade-in-up">
-            <span>↓</span>
+        </div>
+    </section>
+
+    <!-- Section Surah Ar-Rum Ayat 21 -->
+    <section id="surah-arrum-21" class="arrum-section">
+        <div class="container fade-in-up">
+            <h2>Surah Ar-Rum Ayat 21</h2>
+
+            <p class="arabic">
+                وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
+                وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+            </p>
+
+            <p class="translation">
+                "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan
+                untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
+                dan Dia menjadikan di antaramu rasa kasih dan sayang.
+                Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."
+                (QS. Ar-Rum: 21)
+            </p>
+        </div>
+        <div class="rasahormat fade-in-up">
+            <br><br><p style="font-weight: bold; font-size: 20px;">Dengan segala kerendahan hati, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada acara pernikahan kami.</p>
         </div>
     </section>
 
     <!-- Section Divider -->
     <div class="section-divider">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="flower-image" fill="none" stroke="#573000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="flower-image" fill="none" stroke="#573000"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <!-- Rose petals (multi-layer) -->
             <circle cx="50" cy="50" r="20" />
             <circle cx="50" cy="35" r="15" />
@@ -46,11 +103,11 @@
         </svg>
     </div>
     <section id="couple" class="section couple-section">
-    <div class="container">
+        <div class="container">
             <div class="couple-intro fade-in-left">
                 <div class="couple-name">
                     <h2>Fitri Regina Anugerah</h2>
-                    <p>Putri dari Bapak Jamjuri dan Ibu ...</p>
+                    <p>Putri dari Bapak Jamjuri dan Ibu Juraidah</p>
                 </div>
             </div>
             <div class="couple-separator">
@@ -67,7 +124,8 @@
 
     <!-- Section Divider -->
     <div class="section-divider">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="flower-image" fill="none" stroke="#573000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="flower-image" fill="none" stroke="#573000"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <!-- Rose petals (multi-layer) -->
             <circle cx="50" cy="50" r="20" />
             <circle cx="50" cy="35" r="15" />
@@ -87,41 +145,37 @@
 
     <!-- Story Section -->
     <section id="story" class="section story-section">
-    <div class="container">
+        <div class="container">
             <h2 class="section-title fade-in-up">Kisah Kami</h2>
             <div class="story-timeline">
                 <div class="story-item fade-in-left">
                     <div class="story-content">
-                        <h3>Pertemuan Pertama</h3>
-                        <p class="story-date">2022</p>
-                        <p class="story-description">Bertemu untuk pertama kalinya di sebuah acara istimewa. Dari pandangan pertama, sesuatu yang ajaib terasa di antara kami berdua.</p>
+                        <h3>When We Met</h3>
+                        <p class="story-description">kami tidak bertemu lewat rencana besar, hanya sebuah pertemuan sederhana.. namun dari sana, percakapan kecil berubah menjadi rasa nyaman yang diam-diam tumbuh di hati 🤍</p>
                     </div>
                     <div class="story-dot"></div>
                 </div>
 
                 <div class="story-item fade-in-right">
                     <div class="story-content">
-                        <h3>Jatuh Cinta</h3>
-                        <p class="story-date">2023</p>
-                        <p class="story-description">Waktu berjalan dan perasaan semakin mendalam. Setiap momen bersama menjadi lebih berharga dari yang kami bayangkan.</p>
+                        <h3>Becoming Us</h3>
+                        <p class="story-description">Hari demi hari, kami belajar saling mengenal. Bukan hanya tentang bahagia, tetapi juga tentang perbedaan, luka dan doa. Karena cinta bukan tentang kesempurnaan, melainkan tentang bertahan 🌱</p>
                     </div>
                     <div class="story-dot"></div>
                 </div>
 
                 <div class="story-item fade-in-left">
                     <div class="story-content">
-                        <h3>Komitmen</h3>
-                        <p class="story-date">2024</p>
-                        <p class="story-description">Memutuskan untuk menjalani hidup bersama. Tekad yang kuat untuk selalu ada dan mendukung satu sama lain dalam setiap langkah.</p>
+                        <h3>A Sacred Promise</h3>
+                        <p class="story-description">Dengan keyakinan yang semakin kuat, dan restu dari kedua keluarga , kami mengikat sebuah janji dalam pertunangan 💍 sebagai langkah serius menuju masa depan bersama.</p>
                     </div>
                     <div class="story-dot"></div>
                 </div>
 
                 <div class="story-item fade-in-right">
                     <div class="story-content">
-                        <h3>Moment Spesial</h3>
-                        <p class="story-date">2025</p>
-                        <p class="story-description">Lamaran yang penuh kesan dan cinta. Moment sakral dimana kami siap melangkah ke tahap kehidupan yang baru bersama.</p>
+                        <h3>Our Forever Begins</h3>
+                        <p class="story-description">Kini, dengan niat yang sama dan doa yang menyertai, kami memilih untuk menyempurnakan perjalan ini dalam ikatan suci pernikahan 🤍 sebagai awal baru untuk berbagi hidup, tumbuh dan menua bersama.</p>
                     </div>
                     <div class="story-dot"></div>
                 </div>
@@ -131,7 +185,8 @@
 
     <!-- Section Divider -->
     <div class="section-divider divider-dark">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="flower-image" fill="none" stroke="#fffdd0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="flower-image" fill="none" stroke="#fffdd0"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <!-- Rose petals (multi-layer) -->
             <circle cx="50" cy="50" r="20" />
             <circle cx="50" cy="35" r="15" />
@@ -153,7 +208,7 @@
     <section id="save-the-date" class="section save-the-date-section">
         <div class="container">
             <h2 class="section-title fade-in-up">Hitung Mundur Hari Istimewa</h2>
-            
+
             <!-- Countdown Flip Display -->
             <div class="countdown-flip-container fade-in-up">
                 <div class="countdown-flip-unit">
@@ -220,7 +275,8 @@
 
     <!-- Section Divider -->
     <div class="section-divider divider-dark">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="flower-image" fill="none" stroke="#fffdd0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="flower-image" fill="none" stroke="#fffdd0"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <!-- Rose petals (multi-layer) -->
             <circle cx="50" cy="50" r="20" />
             <circle cx="50" cy="35" r="15" />
@@ -239,7 +295,7 @@
     </div>
 
     <section id="details" class="section countdown-section">
-    <div class="container">
+        <div class="container">
             <h2 class="section-title fade-in-up">Acara Kami</h2>
             <div class="countdown-grid">
                 <div class="countdown-card fade-in-up">
@@ -282,22 +338,21 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Maps Section -->
             <div class="location-map fade-in-up" style="margin-top: 60px;">
                 <h3 style="text-align: center; color: #fffdd0; margin-bottom: 30px; font-size: 1.5rem;">
                     <i class="bi bi-geo-alt-fill"></i> Lokasi Acara
                 </h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7614388053466!2d107.14447!3d-6.9271111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6b6b6b6b6b7%3A0x1234567890abcdef!2sGedung%20Pernikahan!5e0!3m2!1sid!2sid!4v1234567890123" 
-                        width="100%" 
-                        height="400" 
-                        style="border: none; border-radius: 15px; box-shadow: 0 10px 40px rgba(128, 0, 0, 0.15);" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7614388053466!2d107.14447!3d-6.9271111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6b6b6b6b6b7%3A0x1234567890abcdef!2sGedung%20Pernikahan!5e0!3m2!1sid!2sid!4v1234567890123"
+                    width="100%" height="400"
+                    style="border: none; border-radius: 15px; box-shadow: 0 10px 40px rgba(128, 0, 0, 0.15);"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
                 <div style="text-align: center; margin-top: 20px;">
-                    <a href="https://maps.app.goo.gl/twr5veX5dafwbuNw5" target="_blank" class="btn-primary" style="display: inline-block;">
+                    <a href="https://maps.app.goo.gl/twr5veX5dafwbuNw5" target="_blank" class="btn-primary"
+                        style="display: inline-block;">
                         <i class="bi bi-arrow-up-right"></i> Buka di Google Maps
                     </a>
                 </div>
@@ -305,14 +360,16 @@
         </div>
     </section>
 
-   <!-- Comments/Messages -->
+    <!-- Comments/Messages -->
     <section id="messages" class="section messages-section">
-    <div class="container">
+        <div class="container">
             <h2 class="section-title fade-in-up">Ucapan & Doa</h2>
             <div class="messages-container">
                 <div class="message-form fade-in-up">
-                    <input type="text" id="message-name" placeholder="Nama Anda..." class="message-input" style="margin-bottom: 10px;">
-                    <textarea id="message-text" placeholder="Tulis ucapan dan doa Anda..." class="message-input"></textarea>
+                    <input type="text" id="message-name" placeholder="Nama Anda..." class="message-input"
+                        style="margin-bottom: 10px;">
+                    <textarea id="message-text" placeholder="Tulis ucapan dan doa Anda..."
+                        class="message-input"></textarea>
                     <button class="btn-primary" id="btn-send-message">Kirim</button>
                 </div>
                 <div class="messages-list" id="messages-list">
@@ -335,7 +392,8 @@
 
     <!-- Section Divider -->
     <div class="section-divider divider-dark">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="flower-image" fill="none" stroke="#fffdd0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="flower-image" fill="none" stroke="#fffdd0"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <!-- Rose petals (multi-layer) -->
             <circle cx="50" cy="50" r="20" />
             <circle cx="50" cy="35" r="15" />
@@ -355,7 +413,7 @@
 
     <!-- RSVP Section -->
     <section id="rsvp" class="section rsvp-section">
-    <div class="container">
+        <div class="container">
             <h2 class="section-title fade-in-up">Konfirmasi Kehadiran</h2>
             <div class="rsvp-form fade-in-up">
                 <input type="text" id="rsvp-name" placeholder="Nama Anda" class="form-input">
@@ -386,6 +444,28 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
-</html>
 
+    <!-- script efek sakura -->
+    <script>
+        function createSakura() {
+            const sakura = document.createElement("div");
+            sakura.classList.add("sakura");
+            sakura.innerHTML = "🌸";
+
+            sakura.style.left = Math.random() * window.innerWidth + "px";
+            sakura.style.fontSize = (Math.random() * 20 + 10) + "px";
+            sakura.style.animationDuration = (Math.random() * 5 + 5) + "s";
+            sakura.style.animationDelay = Math.random() * 5 + "s";
+
+            document.body.appendChild(sakura);
+
+            setTimeout(() => {
+                sakura.remove();
+            }, 10000);
+        }
+
+        setInterval(createSakura, 300);
+    </script>
+</body>
+
+</html>
