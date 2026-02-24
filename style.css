@@ -92,6 +92,19 @@ body {
     margin-top: 40px;
 }
 
+.hero h2 {
+    font-family: 'Sacramento', cursive;
+    font-size: 2rem;
+    color: #fffdd0;
+    margin-bottom: 15px;
+}
+
+.hero .guest-name-label {
+    font-size: 1.2rem;
+    color: #fffdd0;
+    font-weight: 500;
+}
+
 .btn-primary {
     display: inline-block;
     padding: 15px 50px;
@@ -805,6 +818,13 @@ body {
     font-family: 'Sacramento', cursive;
     font-size: 2rem;
     margin-top: 20px;
+}
+
+.footer .footer-text {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-family: 'Sacramento', cursive;
 }
 
 /* ========== Animations ========== */

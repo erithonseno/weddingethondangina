@@ -12,36 +12,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
-
-    <!-- efek sakura -->
-    <style>
-        body {
-            margin: 0;
-            background: linear-gradient(to bottom, #ffe6f0, #ffffff);
-        }
-
-        .sakura {
-            position: fixed;
-            top: -10px;
-            font-size: 20px;
-            color: #ff69b4;
-            animation: fall linear infinite;
-            user-select: none;
-            pointer-events: none;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(100vh) translateX(100px) rotate(360deg);
-                opacity: 0.5;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -52,6 +22,9 @@
             <h1 class="hero-title fade-in-up">Gina & Ethon</h1>
             <p class="hero-text fade-in-up">Minggu, 28 Juni 2026</p>
             <div class="hero-cta fade-in-up">
+                <!-- Contoh di dalam body HTML Anda -->
+                <p class="guest-name-label">Kepada Yth:</p>
+                <h2 id="guest-name">Tamu Undangan</h2>
                 <a href="#surah-arrum-21" class="btn-primary">Lihat Undangan</a>
             </div>
         </div>
@@ -78,7 +51,9 @@
             </p>
         </div>
         <div class="rasahormat fade-in-up">
-            <br><br><p style="font-weight: bold; font-size: 20px;">Dengan segala kerendahan hati, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada acara pernikahan kami.</p>
+            <br><br>
+            <p style="font-weight: bold; font-size: 20px;">Dengan segala kerendahan hati, kami mengundang
+                Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada acara pernikahan kami.</p>
         </div>
     </section>
 
@@ -151,7 +126,9 @@
                 <div class="story-item fade-in-left">
                     <div class="story-content">
                         <h3>When We Met</h3>
-                        <p class="story-description">kami tidak bertemu lewat rencana besar, hanya sebuah pertemuan sederhana.. namun dari sana, percakapan kecil berubah menjadi rasa nyaman yang diam-diam tumbuh di hati 🤍</p>
+                        <p class="story-description">kami tidak bertemu lewat rencana besar, hanya sebuah pertemuan
+                            sederhana.. namun dari sana, percakapan kecil berubah menjadi rasa nyaman yang diam-diam
+                            tumbuh di hati 🤍</p>
                     </div>
                     <div class="story-dot"></div>
                 </div>
@@ -159,7 +136,9 @@
                 <div class="story-item fade-in-right">
                     <div class="story-content">
                         <h3>Becoming Us</h3>
-                        <p class="story-description">Hari demi hari, kami belajar saling mengenal. Bukan hanya tentang bahagia, tetapi juga tentang perbedaan, luka dan doa. Karena cinta bukan tentang kesempurnaan, melainkan tentang bertahan 🌱</p>
+                        <p class="story-description">Hari demi hari, kami belajar saling mengenal. Bukan hanya tentang
+                            bahagia, tetapi juga tentang perbedaan, luka dan doa. Karena cinta bukan tentang
+                            kesempurnaan, melainkan tentang bertahan 🌱</p>
                     </div>
                     <div class="story-dot"></div>
                 </div>
@@ -167,7 +146,9 @@
                 <div class="story-item fade-in-left">
                     <div class="story-content">
                         <h3>A Sacred Promise</h3>
-                        <p class="story-description">Dengan keyakinan yang semakin kuat, dan restu dari kedua keluarga , kami mengikat sebuah janji dalam pertunangan 💍 sebagai langkah serius menuju masa depan bersama.</p>
+                        <p class="story-description">Dengan keyakinan yang semakin kuat, dan restu dari kedua keluarga ,
+                            kami mengikat sebuah janji dalam pertunangan 💍 sebagai langkah serius menuju masa depan
+                            bersama.</p>
                     </div>
                     <div class="story-dot"></div>
                 </div>
@@ -175,7 +156,9 @@
                 <div class="story-item fade-in-right">
                     <div class="story-content">
                         <h3>Our Forever Begins</h3>
-                        <p class="story-description">Kini, dengan niat yang sama dan doa yang menyertai, kami memilih untuk menyempurnakan perjalan ini dalam ikatan suci pernikahan 🤍 sebagai awal baru untuk berbagi hidup, tumbuh dan menua bersama.</p>
+                        <p class="story-description">Kini, dengan niat yang sama dan doa yang menyertai, kami memilih
+                            untuk menyempurnakan perjalan ini dalam ikatan suci pernikahan 🤍 sebagai awal baru untuk
+                            berbagi hidup, tumbuh dan menua bersama.</p>
                     </div>
                     <div class="story-dot"></div>
                 </div>
@@ -439,33 +422,15 @@
 
     <!-- Footer -->
     <footer class="footer fade-in-up">
-        <p>Terima kasih telah menjadi bagian dari kebahagiaan kami</p>
+        <p class="footer-text">Terima Kasih</p>
+        <p>Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan
+            memberikan do'a restu kepada kami.</p>
         <p class="footer-authors">Gina & Ethon</p>
     </footer>
 
     <script src="script.js"></script>
 
     <!-- script efek sakura -->
-    <script>
-        function createSakura() {
-            const sakura = document.createElement("div");
-            sakura.classList.add("sakura");
-            sakura.innerHTML = "🌸";
-
-            sakura.style.left = Math.random() * window.innerWidth + "px";
-            sakura.style.fontSize = (Math.random() * 20 + 10) + "px";
-            sakura.style.animationDuration = (Math.random() * 5 + 5) + "s";
-            sakura.style.animationDelay = Math.random() * 5 + "s";
-
-            document.body.appendChild(sakura);
-
-            setTimeout(() => {
-                sakura.remove();
-            }, 10000);
-        }
-
-        setInterval(createSakura, 300);
-    </script>
 </body>
 
 </html>
