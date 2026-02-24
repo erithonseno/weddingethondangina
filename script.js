@@ -1,5 +1,5 @@
 // Initialize Intersection Observer untuk scroll animation
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 // Tambah class untuk trigger animasi
                 entry.target.classList.add('visible');
-                
+
                 // Untuk elemen dengan animasi khusus
                 if (entry.target.classList.contains('fade-in-up')) {
                     entry.target.style.animationPlayState = 'running';
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (entry.target.classList.contains('fade-in-scale')) {
                     entry.target.style.animationPlayState = 'running';
                 }
-                
+
                 // Optional: jika ingin menghentikan observasi setelah animasi
                 observer.unobserve(entry.target);
             }
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const animatedElements = document.querySelectorAll(
         '.fade-in-up, .fade-in-left, .fade-in-right, .fade-in-scale'
     );
-    
+
     animatedElements.forEach(element => {
         // Set initial state
         element.style.animationPlayState = 'paused';
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Particulate animation heroes yang sudah terlihat
     heroAnimations();
-    
+
     // Button functionality
     setupButtonListeners();
 });
@@ -78,16 +78,16 @@ function handleFormSubmit(e) {
     e.preventDefault();
     const button = e.target;
     const originalText = button.textContent;
-    
+
     // Visual feedback
     button.textContent = 'Terkirim!';
     button.style.background = 'var(--soft-mahogany)';
-    
+
     // Reset setelah 2 detik
     setTimeout(() => {
         button.textContent = originalText;
         button.style.background = '';
-        
+
         // Kosongkan form jika perlu
         const form = button.closest('.message-form') || button.closest('.rsvp-form');
         if (form) {
@@ -112,7 +112,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Parallax effect pada hero section (optional)
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const hero = document.querySelector('.hero');
     if (hero) {
         const scrollPosition = window.pageYOffset;
@@ -122,7 +122,7 @@ window.addEventListener('scroll', function() {
 
 // Mobile menu close setelah klik link
 document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function () {
         const navbarToggler = document.querySelector('.navbar-toggler');
         if (navbarToggler.offsetParent !== null) { // Jika visible
             navbarToggler.click();
@@ -134,19 +134,19 @@ document.querySelectorAll('.nav-link').forEach(link => {
 function initCountdown() {
     // Tanggal pernikahan: 28 Juni 2026 pada pukul 08:00 WIB
     const weddingDate = new Date('2026-06-28T08:00:00+07:00').getTime();
-    
+
     // Generate Google Calendar URL
     const googleCalendarLink = generateGoogleCalendarLink();
     const calendarBtn = document.getElementById('save-to-calendar');
     if (calendarBtn) {
         calendarBtn.href = googleCalendarLink;
     }
-    
+
     // Update countdown setiap 1 detik
     function updateCountdown() {
         const now = new Date().getTime();
         const distance = weddingDate - now;
-        
+
         // Jika acara sudah berlalu
         if (distance < 0) {
             document.getElementById('days-display').textContent = '0';
@@ -155,23 +155,23 @@ function initCountdown() {
             document.getElementById('seconds-display').textContent = '0';
             return;
         }
-        
+
         // Hitung waktu
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
+
         // Update dengan flip animation
         updateFlipDisplay('days', days, 'days-display', 'days-back');
         updateFlipDisplay('hours', hours, 'hours-display', 'hours-back');
         updateFlipDisplay('minutes', minutes, 'minutes-display', 'minutes-back');
         updateFlipDisplay('seconds', seconds, 'seconds-display', 'seconds-back');
     }
-    
+
     // Initialize dari kali pertama
     updateCountdown();
-    
+
     // Update setiap 1 detik
     setInterval(updateCountdown, 1000);
 }
@@ -180,17 +180,17 @@ function updateFlipDisplay(unit, value, frontId, backId) {
     const frontElem = document.getElementById(frontId);
     const backElem = document.getElementById(backId);
     const cardContainer = frontElem.closest('.flip-card');
-    
+
     const currentValue = parseInt(frontElem.textContent);
     const formattedValue = String(value).padStart(2, '0');
-    
+
     if (currentValue !== value) {
         // Set back card value
         backElem.textContent = formattedValue;
-        
+
         // Trigger flip animation
         cardContainer.classList.add('flip');
-        
+
         // Update front card setelah animasi
         setTimeout(() => {
             frontElem.textContent = formattedValue;
@@ -204,14 +204,14 @@ function generateGoogleCalendarLink() {
     const eventDate = '20260628'; // YYYYMMDD format
     const eventTime = '080000'; // HHMMSS format
     const eventTimezone = 'Asia/Jakarta';
-    
+
     // Detail event
     const description = 'Undangan Pernikahan Gina & Ethon';
     const location = 'Lokasi Acara';
-    
+
     // Format URL Google Calendar
     const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventDate}T${eventTime}/${eventDate}T100000&details=${encodeURIComponent(description)}&location=${encodeURIComponent(location)}&ctz=${encodeURIComponent(eventTimezone)}`;
-    
+
     return calendarUrl;
 }
 
@@ -230,7 +230,7 @@ function setupMessagesHandler() {
     const messagesList = document.getElementById('messages-list');
 
     if (btnSendMessage) {
-        btnSendMessage.addEventListener('click', function() {
+        btnSendMessage.addEventListener('click', function () {
             const name = messageNameInput.value.trim();
             const text = messageTextInput.value.trim();
 
@@ -282,9 +282,9 @@ function setupRSVPHandler() {
     const rsvpStatus = document.getElementById('rsvp-status');
 
     if (btnSendRSVP) {
-        btnSendRSVP.addEventListener('click', function() {
+        btnSendRSVP.addEventListener('click', function () {
             // Validate form
-            if (!rsvpForm.name.value.trim() || !rsvpForm.email.value.trim() || 
+            if (!rsvpForm.name.value.trim() || !rsvpForm.email.value.trim() ||
                 !rsvpForm.acara.value || !rsvpForm.konfirmasi.value) {
                 alert('Silakan isi semua bidang yang diperlukan');
                 return;
@@ -331,34 +331,34 @@ function sendRSVPWithFormSubmit(data, formInputs, statusElement, button) {
             _replyto: data.guest_email
         })
     })
-    .then(response => {
-        if (response.ok) {
-            statusElement.textContent = '✓ Konfirmasi berhasil dikirim!';
-            statusElement.style.color = '#4CAF50';
-            
-            // Clear form
-            formInputs.name.value = '';
-            formInputs.email.value = '';
-            formInputs.acara.value = '';
-            formInputs.konfirmasi.value = '';
-            formInputs.pesan.value = '';
-            
-            // Reset button
-            setTimeout(() => {
-                statusElement.textContent = '';
-                statusElement.style.display = 'none';
-                button.disabled = false;
-            }, 3000);
-        } else {
-            throw new Error('Gagal mengirim');
-        }
-    })
-    .catch(error => {
-        statusElement.textContent = '✗ Gagal mengirim. Silakan coba lagi.';
-        statusElement.style.color = '#FF6B6B';
-        button.disabled = false;
-        console.error('Error:', error);
-    });
+        .then(response => {
+            if (response.ok) {
+                statusElement.textContent = '✓ Konfirmasi berhasil dikirim!';
+                statusElement.style.color = '#4CAF50';
+
+                // Clear form
+                formInputs.name.value = '';
+                formInputs.email.value = '';
+                formInputs.acara.value = '';
+                formInputs.konfirmasi.value = '';
+                formInputs.pesan.value = '';
+
+                // Reset button
+                setTimeout(() => {
+                    statusElement.textContent = '';
+                    statusElement.style.display = 'none';
+                    button.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error('Gagal mengirim');
+            }
+        })
+        .catch(error => {
+            statusElement.textContent = '✗ Gagal mengirim. Silakan coba lagi.';
+            statusElement.style.color = '#FF6B6B';
+            button.disabled = false;
+            console.error('Error:', error);
+        });
 }
 
 // Fungsi untuk menga-escape HTML dan mencegah injection
@@ -368,19 +368,9 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// Initialize messages handler
-setupMessagesHandler();
-
-// Initialize RSVP handler saat DOM ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupRSVPHandler);
-} else {
-    setupRSVPHandler();
-}
-
-<script>
-  // Fungsi untuk mengambil parameter dari URL
-  function getParameterByName(name) {
+// ========== URL PARAMETER HANDLING ==========
+// Fungsi untuk mengambil parameter dari URL
+function getParameterByName(name) {
     const url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
     const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
@@ -388,13 +378,34 @@ if (document.readyState === 'loading') {
     if (!results) return null;
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
-  }
+}
 
-  // Mengambil nama dari ?to=NamaTamu
-  const guestName = getParameterByName('to');
+// Initialize messages handler
+setupMessagesHandler();
 
-  // Memasukkan nama ke elemen HTML jika parameter ada
-  if (guestName) {
-    document.getElementById('guest-name').innerText = guestName;
-  }
-</script>
+// Initialize RSVP handler saat DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+        setupRSVPHandler();
+        
+        // Mengambil nama dari ?to=NamaTamu dan memasukkan ke elemen HTML
+        const guestName = getParameterByName('to');
+        if (guestName) {
+            const guestNameElement = document.getElementById('guest-name');
+            if (guestNameElement) {
+                guestNameElement.innerText = guestName;
+            }
+        }
+    });
+} else {
+    setupRSVPHandler();
+    
+    // Mengambil nama dari ?to=NamaTamu dan memasukkan ke elemen HTML
+    const guestName = getParameterByName('to');
+    if (guestName) {
+        const guestNameElement = document.getElementById('guest-name');
+        if (guestNameElement) {
+            guestNameElement.innerText = guestName;
+        }
+    }
+}
