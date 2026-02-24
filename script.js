@@ -1,3 +1,55 @@
+// ========== AUDIO/MUSIC CONTROL ==========
+function toggleMute() {
+    const audio = document.getElementById('backsound');
+    const muteButton = document.getElementById('muteButton');
+    const icon = muteButton.querySelector('i');
+    
+    if (!audio) {
+        console.warn('Audio element not found');
+        return;
+    }
+    
+    if (audio.paused || audio.muted) {
+        audio.muted = false;
+        audio.play().catch(err => console.log('Play error:', err));
+        // Change icon to volume-up when playing
+        icon.className = 'bi bi-volume-up';
+        muteButton.classList.remove('muted');
+    } else {
+        audio.pause();
+        audio.muted = false; // Reset muted state
+        // Change icon to volume-mute when paused
+        icon.className = 'bi bi-volume-mute';
+        muteButton.classList.add('muted');
+    }
+}
+
+// Initialize music when page loads
+function initializeAudio() {
+    const audio = document.getElementById('backsound');
+    if (audio) {
+        audio.volume = 0.3; // Set volume to 30%
+        // Coba autoplay, tapi jangan paksa jika browser melarang
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(err => {
+                // Autoplay blocked - user perlu klik tombol
+                console.log('Autoplay blocked. Musik akan diputar saat user pertama kali klik.');
+            });
+        }
+    }
+}
+
+// First click anywhere pada halaman - trigger music autoplay
+document.addEventListener('click', function setupAutoplay() {
+    const audio = document.getElementById('backsound');
+    if (audio && audio.paused) {
+        audio.play().catch(err => console.log('First click play error:', err));
+    }
+    // Hapus listener setelah pertama kali klik
+    document.removeEventListener('click', setupAutoplay);
+}, { once: true });
+
 // Initialize Intersection Observer untuk scroll animation
 document.addEventListener('DOMContentLoaded', function () {
     const observerOptions = {
@@ -47,6 +99,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Button functionality
     setupButtonListeners();
+    
+    // Initialize audio
+    initializeAudio();
 });
 
 // Hero section animation pada load
@@ -229,6 +284,43 @@ function setupMessagesHandler() {
     const messageTextInput = document.getElementById('message-text');
     const messagesList = document.getElementById('messages-list');
 
+    // Load persisted messages from localStorage
+    function loadPersistedMessages() {
+        const storedMessages = localStorage.getItem('weddingMessages');
+        if (storedMessages) {
+            const messages = JSON.parse(storedMessages);
+            messages.forEach(msg => {
+                addMessageToList(msg.name, msg.text, messagesList);
+            });
+        }
+    }
+
+    // Add message to the list (UI display)
+    function addMessageToList(name, text, container) {
+        const newMessageItem = document.createElement('div');
+        newMessageItem.className = 'message-item fade-in-left';
+        newMessageItem.innerHTML = `
+            <p class="message-name">${escapeHtml(name)}</p>
+            <p class="message-text">"${escapeHtml(text)}"</p>
+        `;
+        container.insertBefore(newMessageItem, container.firstChild);
+    }
+
+    // Save message to localStorage
+    function saveMessageToStorage(name, text) {
+        const storedMessages = localStorage.getItem('weddingMessages');
+        let messages = storedMessages ? JSON.parse(storedMessages) : [];
+        
+        // Add new message
+        messages.unshift({ name, text, timestamp: new Date().toISOString() });
+        
+        // Save back to localStorage
+        localStorage.setItem('weddingMessages', JSON.stringify(messages));
+    }
+
+    // Load existing messages on page load
+    loadPersistedMessages();
+
     if (btnSendMessage) {
         btnSendMessage.addEventListener('click', function () {
             const name = messageNameInput.value.trim();
@@ -239,16 +331,11 @@ function setupMessagesHandler() {
                 return;
             }
 
-            // Create new message item
-            const newMessageItem = document.createElement('div');
-            newMessageItem.className = 'message-item fade-in-left';
-            newMessageItem.innerHTML = `
-                <p class="message-name">${escapeHtml(name)}</p>
-                <p class="message-text">"${escapeHtml(text)}"</p>
-            `;
+            // Save to localStorage
+            saveMessageToStorage(name, text);
 
-            // Add to messages list at the top
-            messagesList.insertBefore(newMessageItem, messagesList.firstChild);
+            // Display in list
+            addMessageToList(name, text, messagesList);
 
             // Clear inputs
             messageNameInput.value = '';
@@ -387,7 +474,7 @@ setupMessagesHandler();
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
         setupRSVPHandler();
-        
+
         // Mengambil nama dari ?to=NamaTamu dan memasukkan ke elemen HTML
         const guestName = getParameterByName('to');
         if (guestName) {
@@ -399,7 +486,7 @@ if (document.readyState === 'loading') {
     });
 } else {
     setupRSVPHandler();
-    
+
     // Mengambil nama dari ?to=NamaTamu dan memasukkan ke elemen HTML
     const guestName = getParameterByName('to');
     if (guestName) {

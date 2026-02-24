@@ -357,15 +357,15 @@
                 </div>
                 <div class="messages-list" id="messages-list">
                     <div class="message-item fade-in-left">
-                        <p class="message-name">Nama Tamu</p>
+                        <p class="message-name">mikaila</p>
                         <p class="message-text">"Semoga selalu bahagia dan harmonis sampai tua..."</p>
                     </div>
                     <div class="message-item fade-in-left" style="animation-delay: 0.1s">
-                        <p class="message-name">Nama Tamu</p>
+                        <p class="message-name">andi</p>
                         <p class="message-text">"Berkah dan bahagia untuk kalian berdua..."</p>
                     </div>
                     <div class="message-item fade-in-left" style="animation-delay: 0.2s">
-                        <p class="message-name">Nama Tamu</p>
+                        <p class="message-name">rachel</p>
                         <p class="message-text">"Semoga lancar dan indah acaranya..."</p>
                     </div>
                 </div>
@@ -430,7 +430,63 @@
 
     <script src="script.js"></script>
 
-    <!-- script efek sakura -->
+    <!-- Elemen Audio -->
+    <audio id="backsound" loop>
+        <source src="img/musikwedding.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Tombol Mute -->
+    <button id="muteButton" class="mute-button" onclick="toggleMute()" title="Mute/Unmute">
+        <i class="bi bi-volume-mute"></i>
+    </button>
+
+    <style>
+        .mute-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #800000, #ff6b6b);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(128, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mute-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(128, 0, 0, 0.6);
+        }
+
+        .mute-button:active {
+            transform: translateY(0);
+        }
+
+        .mute-button.muted {
+            background: linear-gradient(135deg, #666, #999);
+        }
+
+        @media (max-width: 768px) {
+            .mute-button {
+                top: 15px;
+                right: 15px;
+                width: 42px;
+                height: 42px;
+                font-size: 18px;
+            }
+        }
+    </style>
+
+
 </body>
 
 </html>
