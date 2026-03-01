@@ -35,6 +35,10 @@ body {
 .hero {
     height: 100vh;
     background-color: #573000;
+    background-image: url("img/cover.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,7 +55,7 @@ body {
     right: 0;
     bottom: 0;
     background: radial-gradient(circle at 20% 80%, rgba(160, 82, 45, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.08) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
 }
@@ -62,11 +66,12 @@ body {
     text-align: center;
     max-width: 600px;
     padding: 20px;
+    color: var(--cream);
 }
 
 .hero-subtitle {
     font-size: 1.1rem;
-    color: #fffdd0;
+    color: inherit;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -76,14 +81,23 @@ body {
 .hero-title {
     font-family: 'Sacramento', cursive;
     font-size: 7rem;
-    color: #fffdd0;
+    color: inherit;
     margin: 20px 0;
     font-weight: 400;
 }
 
+/* Improve readability on image background */
+.hero-title,
+.hero-subtitle,
+.hero-text,
+.hero h2,
+.hero .guest-name-label {
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 5);
+}
+
 .hero-text {
     font-size: 1.3rem;
-    color: #f5f5dc;
+    color: inherit;
     margin-bottom: 40px;
     font-weight: 300;
 }
@@ -95,13 +109,13 @@ body {
 .hero h2 {
     font-family: 'Sacramento', cursive;
     font-size: 2rem;
-    color: #fffdd0;
+    color: inherit;
     margin-bottom: 15px;
 }
 
 .hero .guest-name-label {
     font-size: 1.2rem;
-    color: #fffdd0;
+    color: inherit;
     font-weight: 500;
 }
 
@@ -150,8 +164,15 @@ body {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(20px); }
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(20px);
+    }
 }
 
 /* arrum */
@@ -159,29 +180,29 @@ body {
     background: #f5f5dc;
     padding: 60px 20px;
     text-align: center;
-  }
+}
 
-  .arrum-section h2 {
+.arrum-section h2 {
     font-size: 28px;
     margin-bottom: 20px;
     color: #6b4f3b;
-  }
+}
 
-  .arabic {
+.arabic {
     font-size: 26px;
     direction: rtl;
     font-family: 'Amiri', serif;
     margin-bottom: 20px;
     line-height: 1.8;
-  }
+}
 
-  .translation {
+.translation {
     font-size: 16px;
     max-width: 700px;
     margin: 0 auto;
     color: #555;
     line-height: 1.6;
-  }
+}
 
 /* ========== General Section ========== */
 .section {
@@ -203,7 +224,7 @@ body {
 }
 
 /* Section-specific title colors */
-.couple-section .section-title{
+.couple-section .section-title {
     color: #573000;
 }
 
@@ -667,7 +688,8 @@ body {
     transform: rotateX(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -758,7 +780,8 @@ body {
         height: 60px;
     }
 
-    .flip-card-front, .flip-card-back {
+    .flip-card-front,
+    .flip-card-back {
         font-size: 2rem;
     }
 
@@ -782,7 +805,8 @@ body {
         height: 50px;
     }
 
-    .flip-card-front, .flip-card-back {
+    .flip-card-front,
+    .flip-card-back {
         font-size: 1.5rem;
     }
 
@@ -833,6 +857,7 @@ body {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -844,6 +869,7 @@ body {
         opacity: 0;
         transform: translateX(-40px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -855,6 +881,7 @@ body {
         opacity: 0;
         transform: translateX(40px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -866,6 +893,7 @@ body {
         opacity: 0;
         transform: scale(0.9);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -1028,7 +1056,7 @@ body {
     .countdown-card h3 {
         font-size: 1.5rem;
     }
-    
+
     .location-map {
         margin-top: 30px;
     }
@@ -1085,9 +1113,12 @@ body {
 }
 
 @keyframes floatPeony {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -1106,11 +1137,12 @@ body {
         width: 80px;
         height: 80px;
     }
-    
+
     .section-divider {
         padding: 30px 20px;
     }
 }
+
 /* ========== Rose Edge Decorations ========== */
 .rose-decoration {
     position: absolute;
@@ -1181,7 +1213,7 @@ body {
         bottom: 8px !important;
         opacity: 0.6;
     }
-    
+
     .rose-decoration.rose-light {
         opacity: 0.4;
     }
